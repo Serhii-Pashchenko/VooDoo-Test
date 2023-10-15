@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VooDoo Test</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body class="flex items-center justify-center">
+    <div class="heading-wrapper w-full">
+      <header class="header p-6 md:py-12 md:px-16 mb-6 md:mb-24 flex place-content-between border-b border-black">
+        <div class="logo flex">
+          <div class="logo__image">
+            <img class="w-6 h-6 md:w-11 md:h-11" src="./assets/logo.svg" alt="logo" />
+          </div>
+          <div class="logo__title text-sm md:text-4xl md:leading-8 flex flex-col ml-1">
+            <span class="md:mb-6">VooDoo</span>
+            <span>Test</span>
+          </div>
+        </div>
+
+        <nav class="header-nav flex items-center">
+          <ul class="flex">
+            <li class="mr-4 md:mr-12 flex items-center">
+              <a href="#" onclick="document.querySelector('.cart-container').style.display='block'; cart.renderCart()"><img src="./assets/shopping-cart.svg" alt="shopping-cart" /></a>
+            </li>
+            <li>
+              <button class="bg-black hover:bg-gray-700 text-white text-sm md:text-xl font-bold py-3 px-3 rounded">Sign-up</button>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <main>
+        <div class="beta-info bg-black flex place-content-between p-4 mx-6 md:mx-32 mb-12 text-white rounded cursor-pointer" onclick="this.children[1].classList.toggle('flipped')">
+          <div class="info flex items-center">
+            <img src="./assets/alert-circle.svg" alt="alert" />
+            <span class="text-base ml-1 font-bold">ALPHA</span>
+            <span class="fw-500 text-sm ml-6 md:ml-12">Important info <span class="hidden md:inline">regarding our service</span></span>
+          </div>
+          <div class="chevron-down">
+            <img src="./assets/chevron-down.svg" alt="chevron-down" />
+          </div>
+        </div>
+        <div id="product-container" class="grid grid-cols-1 md:grid-cols-4 gap-6 mx-6 md:mx-32"></div>
+        <div class="pagination mt-10 md:mt-12 pb-52" id="pagination"></div>
+      </main>
+      <footer class="footer bg-white border-t border-black p-12 pb-14 md:py-20 md:px-56 flex place-content-between flex-col-reverse md:flex-row">
+        <div class="logo flex mr-0 md:mr-32 w-full md:w-auto justify-center md:justify-start">
+          <div class="logo__image">
+            <img class="w-20 h-20" src="./assets/logo.svg" alt="logo" />
+          </div>
+        </div>
+        <nav class="footer-nav flex place-content-between text-sm w-full flex-col md:flex-row">
+          <ul class="mb-12 md:mb-0 mr-0 md:mr-2">
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">RETURNS</a></li>
+            <li><a href="#">CONTACT</a></li>
+          </ul>
+          <ul class="mb-12 md:mb-0 mr-0 md:mr-2">
+            <li><a href="#">TERMS AND CONDITIONS</a></li>
+            <li><a href="#">PRIVACY POLICY</a></li>
+            <li><a href="#">COOKIE POLICY</a></li>
+            <li><a href="#">COOKIE SETTINGS</a></li>
+          </ul>
+          <ul class="mb-12 md:mb-0">
+            <li><a href="#">ABOUT SECOND CHANCE</a></li>
+            <li><a href="#">CAREER</a></li>
+            <li><a href="#">FACEBOOK</a></li>
+            <li><a href="#">INSTAGRAM</a></li>
+          </ul>
+        </nav>
+      </footer>
+    </div>
+
+    <div style="color: #fcf7e6" class="cart-container bg-black py-12 px-10 absolute top-0 right-0 w-full md:w-96 hidden">
+      <div style="border-bottom: 1px solid #fcf7e6" class="cart-header flex place-content-between pb-6">
+        <h1 class="text-2xl">Shopping Cart</h1>
+        <img class="cursor-pointer" src="./assets/close.svg" onclick="document.querySelector('.cart-container').style.display='none'" alt="close" />
+      </div>
+      <div id="cart-items" class="pt-3 pb-8" style="border-bottom: 1px solid #fcf7e6"></div>
+      <div class="total flex place-content-between mt-9 text-sm">TOTAL <span id="totalAmount">0 KR.</span></div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>

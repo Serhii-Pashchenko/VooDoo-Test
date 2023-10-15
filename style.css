@@ -1,0 +1,52 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #fcf7e6;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+}
+
+.fw-700 {
+  font-weight: 700;
+}
+
+.fw-500 {
+  font-weight: 500;
+}
+
+.fw-400 {
+  font-weight: 500;
+}
+
+.flipped {
+  transform: rotate(180deg);
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  font-size: 1.125rem;
+  color: #1e1e1e;
+}
+
+.page-number {
+  width: 39px;
+  height: 39px;
+  border: 1px solid #000;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.page-number.active {
+  background-color: #1e1e1e;
+  color: #fff;
+}
